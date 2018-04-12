@@ -53,7 +53,6 @@
 
 .welcome-content{
   text-align:center;
-  background-color:$tan;
   height:25%;
   width: 50%;
   margin-left: 300px;
@@ -61,14 +60,14 @@
 }
 
 .welcome{
-  font-style: italic;
   padding-top:50px;
   font-size:40px;
 }
 
 
 .hero-image{
-  height: auto;
+
+  height: 600px;
   width:100% ;
   background-position: center;
   background-repeat: no-repeat;
