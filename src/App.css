@@ -61,18 +61,18 @@
 
 .welcome{
   padding-top:50px;
-  font-size:40px;
+  font-size:50px;
+  color:black;
+
 }
 
 
 .hero-image{
-
   height: 600px;
   width:100% ;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed;
   opacity: .50;
   left:0;
   top:0;
@@ -94,4 +94,19 @@
 
 #welcome-access-account{
   display:flex;
+}
+
+#welcome-header {
+  text-align:center;
+  height:25%;
+  width: 50%;
+  padding-top:15px;
+  padding-bottom:15px;
+  margin-left: 275px;
+  font-size: 18px;
+}
+
+#welcome-body{
+  background-size:cover;
+  background-color: #EFF7F6;
 }
