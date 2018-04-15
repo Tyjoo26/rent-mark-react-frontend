@@ -27,6 +27,7 @@ class FetchEvent {
   }
 
   storeEvent = (event) => {
+    this.event.users = [],
     if(this.event.users === undefined) {
       this.event.id = event.id,
       this.event.name = event.name,
@@ -37,7 +38,6 @@ class FetchEvent {
       this.event.name = event.name,
       this.event.details = event.details,
       this.event.date = event.date,
-      this.event.users = [],
       event.users.forEach(function(user){
         this.event.users.push(user)
       })

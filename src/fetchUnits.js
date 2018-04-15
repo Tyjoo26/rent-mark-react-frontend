@@ -29,7 +29,18 @@ class FetchUnit {
   }
 
   storeUnit = (unit) => {
-
+    this.unit.users = [],
+    unit.forEach(function(u) {
+      this.unit.unit_id = unit.unit_id,
+      this.unit.unit_type = unit.unit_type,
+      this.unit.unit_number = unit.unit_number,
+      this.unit.unit_rent = unit.unit_rent,
+      this.unit.rent_due_date = unit.rent_due_date,
+      this.unit.users.push(unit.user_id),
+      this.unit.users.push(unit.first_name),
+      this.unit.users.push(unit.last_name),
+      this.unit.users.push(unit.email)
+    })
   }
 
   deleteUnitUser = (unit_id, user_id) => {
