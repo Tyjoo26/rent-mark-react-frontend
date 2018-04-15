@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import logo from './rent_mark.png'
 import banner from './aussie.jpg'
 import './App.css';
 import Header from './header.js'
 import {FormControl, FormGroup, ControlLabel, Form, Col, Button} from 'react-bootstrap';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import tenantDashboard from './tenantDashboard.js'
 
+const logIn = (e) => {
+  console.log(e.target.parentNode)
+}
 
 class Welcome extends Component {
   render() {
