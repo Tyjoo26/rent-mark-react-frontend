@@ -68,11 +68,11 @@ class FetchEvent {
       .catch(errorLog)
   }
 
-  postConfig(userInfo) {
+  postConfig(eventInfo) {
     return {
       method: 'POST',
       headers: {'Content-Type': "application/json"},
-      body: JSON.stringify(userInfo)
+      body: JSON.stringify(eventInfo)
     }
   }
 
