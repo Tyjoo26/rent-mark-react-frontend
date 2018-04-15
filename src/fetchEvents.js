@@ -62,8 +62,8 @@ class FetchEvent {
       .catch(errorLog)
   }
 
-  postEventUser = (event_id, user_info) => {
-    fetch(`${this.baseUrl}/${event_id}`)
+  postEventUser = (event_id, user_id, user_info) => {
+    fetch(`${this.baseUrl}/${event_id}/users/${user_id}`)
       .then(handleResponse)
       .catch(errorLog)
   }

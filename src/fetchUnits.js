@@ -72,8 +72,8 @@ class FetchUnit {
       .catch(errorLog)
   }
 
-  postUnitUser = (unit_id, user_info) => {
-    fetch(`${this.baseUrl}/${unit_id}`)
+  postUnitUser = (unit_id, user_id, user_info) => {
+    fetch(`${this.baseUrl}/${unit_id}/users/${user_id}`)
       .then(handleResponse)
       .catch(errorLog)
   }
