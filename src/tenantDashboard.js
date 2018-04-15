@@ -12,7 +12,7 @@ class TenantDashboard extends Component {
           <h1>
             Account Management
           </h1>
-            <BootstrapTable >
+            <BootstrapTable data={ user }>
               <TableHeaderColumn dataField='first_name'>First name</TableHeaderColumn>
               <TableHeaderColumn dataField='last_name'>Last Name</TableHeaderColumn>
               <TableHeaderColumn dataField='unit_number'>Unit Number</TableHeaderColumn>
