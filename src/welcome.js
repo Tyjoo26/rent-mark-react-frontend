@@ -25,10 +25,13 @@ class Welcome extends Component {
       </div>
       <section id="welcome-body">
         <div id="welcome-header">
-          {`Access Your Account`}
+          {`With our Resident Portal, we've made it easy and convenient for you to pay your rent and submit service requests online.`}
+          <br />
+          <br />
+          {`Access your account!`}
         </div>
         <div className="welcome-content">
-          <Form horizontal>
+          <Form horizontal onSubmit={logIn}>
             <FormGroup controlId="formHorizontalEmail">
               <Col componentClass={ControlLabel} sm={2}>
                 Email
