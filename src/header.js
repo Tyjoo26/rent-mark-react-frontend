@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import logo from './rent_mark.png';
 import './App.css';
+import renderIf from './renderIf.js';
 
 class Header extends Component {
+  constructor() {
+    super();
+  }
   render() {
     return (
       <div className="App-header">
@@ -15,9 +19,6 @@ class Header extends Component {
           </button>
         </div>
         <div className="v-left">
-          <button>
-            Log In
-          </button>
         </div>
       </div>
     )
