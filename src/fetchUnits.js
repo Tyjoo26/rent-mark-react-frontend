@@ -25,7 +25,7 @@ class FetchUnit {
   getUnit = (id) => {
     fetch(`${this.baseUrl}/${id}`)
       .then(handleResponse)
-      .then((event) => this.storeUnit(unit))
+      .then((unit) => this.storeUnit(unit))
   }
 
   storeUnit = (unit) => {
@@ -66,12 +66,12 @@ class FetchUnit {
   patchConfig = (unitInfo) =>  {
     return {
       method: "PATCH",
-      headers: {`Content-Type`: "application/json"},
+      headers: {"Content-Type": "application/json"},
       body: JSON.stringify(unitInfo)
     }
   }
 
-  patchUnit(unitInfo, id) => {
+  patchUnit = (unitInfo, id) => {
     fetch(`${this.baseUrl}/${id}` , this.patchConfig(unitInfo))
       .then(handleResponse)
       .catch(errorLog)

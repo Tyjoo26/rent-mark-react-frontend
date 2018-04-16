@@ -23,12 +23,12 @@ class FetchEvent {
   getEvent = (id) => {
     fetch(`${this.baseUrl}/${id}`)
       .then(handleResponse)
-      .then((event) => storeEvent(event))
+      .then((event) => this.storeEvent(event))
   }
 
   storeEvent = (event) => {
-    this.event.users = [],
-    if(this.event.users === undefined) {
+    this.event.users = []
+    if (this.event.users === undefined) {
       this.event.id = event.id,
       this.event.name = event.name,
       this.event.details = event.details,
@@ -44,7 +44,7 @@ class FetchEvent {
     }
   }
 
-  patchEvent(eventInfo, id) => {
+  patchEvent = (eventInfo, id) => {
     fetch(`${this.baseUrl}/${id}` , this.patchConfig(eventInfo))
       .then(handleResponse)
       .catch(errorLog)
@@ -52,7 +52,7 @@ class FetchEvent {
   patchConfig = (userInfo) =>  {
     return {
       method: "PATCH",
-      headers: {`Content-Type`: "application/json"},
+      headers: {"Content-Type": "application/json"},
       body: JSON.stringify(userInfo)
     }
   }
@@ -76,13 +76,13 @@ class FetchEvent {
     }
   }
 
-  deleteEvent(event_id) => {
+  deleteEvent = (event_id) => {
     fetch(`${this.baseUrl}/${event_id}`, {method: "DELETE"})
       .then(handleResponse)
       .catch(errorLog)
   }
 
-  deleteEventUser(event_id, user_id) => {
+  deleteEventUser = (event_id, user_id) => {
     fetch(`${this.baseUrl}/${event_id}/users/${user_id}`, {method: "DELETE"})
       .then(handleResponse)
       .catch(errorLog)
