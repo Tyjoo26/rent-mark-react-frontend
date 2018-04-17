@@ -3,9 +3,10 @@ import './App.css';
 import Header from './header.js'
 import Welcome from './welcome.js'
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
-import FetchUser from './fetchUsers.js'
-import FetchUnits from './fetchUnits.js'
-import FetchEvents from './fetchEvents.js'
+import AllUsers from './allUsers.js'
+import AllEvents from './allEvents.js'
+import AllUnits from './allUnits.js'
+import User from './user.js'
 
 class App extends Component {
   constructor(){
