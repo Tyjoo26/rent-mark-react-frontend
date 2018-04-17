@@ -1,32 +1,34 @@
-const [handleResponse, errorLog] = require('./response-handlers')
+export const [handleResponse, errorLog] = require('./response-handlers')
 
+export const url = "https://rentmark2-backend.herokuapp.com/api/v1/units"
 
-class FetchUser {
-  constructor(){
-    this.users = []
-    this.baseUrl = "https://rentmark2-backend.herokuapp.com/api/v1/users"
-  }
+export const baseUrl = "https://rentmark2-backend.herokuapp.com/api/v1/users"
 
-  getUsers = () => {
-    fetch(`${this.baseUrl}`)
+export const getUsers = () => {
+    return fetch(`${url}`)
       .then(handleResponse)
-      .then((users) => this.storeUsers(users))
+      .then((users) => {
+        return users.map(function(user, idx) {
+          user.key = idx
+          return user
+        })
+      })
       .catch(errorLog)
   }
 
-  storeUsers = (users) => {
-    users.forEach(function(user){
-      this.users.push(user)
-    })
-  }
+export const showUser = (id) => {
+  return fetch(`${baseUrl}/${id}`)
+    .then(handleResponse)
+    .catch(errorLog)
+}
 
-  patchUser = ( userInfo , id) => {
-    fetch(`${this.baseUrl}/${id}` , this.patchConfig(userInfo))
+export const patchUser = ( userInfo , id) => {
+    fetch(`${baseUrl}/${id}` , patchConfig(userInfo))
       .then(handleResponse)
       .catch(errorLog)
   }
 
-  patchConfig = (userInfo) =>  {
+export const patchConfig = (userInfo) =>  {
     return {
       method: "PATCH",
       headers: {"Content-Type": "application/json"},
@@ -34,13 +36,13 @@ class FetchUser {
     }
   }
 
-  postUser = (userInfo) => {
-    fetch(`${this.baseUrl}`, this.postConfig(userInfo))
+export const  postUser = (userInfo) => {
+    fetch(`${baseUrl}`, postConfig(userInfo))
       .then(handleResponse)
       .catch(errorLog)
   }
 
-  postConfig(userInfo) {
+export const postConfig = (userInfo) => {
     return {
       method: 'POST',
       headers: {'Content-Type': "application/json"},
@@ -48,9 +50,8 @@ class FetchUser {
     }
   }
 
-  destroyUser = (e) => {
-    fetch(`${this.baseUrl}/${e.id}`, {method: "DELETE"})
+export const  destroyUser = (e) => {
+    fetch(`${baseUrl}/${e.id}`, {method: "DELETE"})
       .then(handleResponse)
       .catch(errorLog)
   }
-}
