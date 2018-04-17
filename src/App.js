@@ -17,11 +17,19 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <Header
-        isLoggedIn={this.state.isLoggedIn}/>
-        <Welcome isLoggedIn={this.state.isLoggedIn}/>
-      </div>
+      <Router>
+        <div className="App">
+          <Header
+          isLoggedIn={this.state.isLoggedIn}/>
+          <main>
+            <Switch>
+              <Route exact path="/users" component={ AllUsers }/>
+              <Route path="/users/:user_id" component={User}/>
+              <Route path="/" component={Welcome}/>
+            </Switch>
+          </main>
+        </div>
+      </Router>
     );
   }
 }
