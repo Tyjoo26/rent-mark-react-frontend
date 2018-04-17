@@ -91,6 +91,16 @@
   font-size: 30px;
 }
 
+table {
+   border: 1px solid black;
+   margin:auto;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
 
 #welcome-access-account{
   display:flex;
