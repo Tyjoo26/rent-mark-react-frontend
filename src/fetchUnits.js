@@ -4,29 +4,31 @@ const [handleResponse, errorLog] = require('./response-handlers')
 export const baseUrl = "https://rentmark2-backend.herokuapp.com/api/v1/units"
 
 export const getUnits = () => {
-  return fetch(`${this.baseUrl}`)
+  return fetch(`${baseUrl}`)
     .then(handleResponse)
-    .then((units) => {return units.map(function(unit, idx){
+    .then((units) => {
+      return units.map(function(unit, idx) {
       unit.key = idx
       return unit
-    })})
+    })
+  })
     .catch(errorLog)
 }
 
-export const getUnit = (id) => {
-    return fetch(`${this.baseUrl}/${id}`)
+export const ShowUnit = (id) => {
+    return fetch(`${baseUrl}/${id}`)
       .then(handleResponse)
       .catch(errorLog)
   }
 
 export const deleteUnitUser = (unit_id, user_id) => {
-    return fetch(`${this.baseUrl}/${unit_id}/users/${user_id}`, {method: "DELETE"})
+    return fetch(`${baseUrl}/${unit_id}/users/${user_id}`, {method: "DELETE"})
       .then(handleResponse)
       .catch(errorLog)
   }
 
 export const deleteUnit = (unit_id) => {
-  return  fetch(`${this.baseUrl}/${unit_id}`, {method: "DELETE"})
+  return  fetch(`${baseUrl}/${unit_id}`, {method: "DELETE"})
       .then(handleResponse)
       .catch(errorLog)
   }
@@ -48,19 +50,19 @@ export const  patchConfig = (unitInfo) =>  {
   }
 
 export const  patchUnit = (unitInfo, id) => {
-  return  fetch(`${this.baseUrl}/${id}` , this.patchConfig(unitInfo))
+  return  fetch(`${baseUrl}/${id}` , patchConfig(unitInfo))
       .then(handleResponse)
       .catch(errorLog)
   }
 
 export const  postUnit = (unitInfo) => {
-  return  fetch(`${this.baseUrl}`, this.postConfig(unitInfo))
+  return  fetch(`${baseUrl}`, postConfig(unitInfo))
       .then(handleResponse)
       .catch(errorLog)
   }
 
 export const  postUnitUser = (unit_id, user_id, user_info) => {
-  return  fetch(`${this.baseUrl}/${unit_id}/users/${user_id}`)
+  return  fetch(`${baseUrl}/${unit_id}/users/${user_id}`)
       .then(handleResponse)
       .catch(errorLog)
   }

@@ -7,8 +7,9 @@ import AllUsers from './allUsers.js'
 import AllEvents from './allEvents.js'
 import AllUnits from './allUnits.js'
 import User from './user.js'
+import Unit from './unit.js'
 import EditUser from './edit-user.js'
-
+import EditUnit from './edit-unit.js'
 
 
 
@@ -33,8 +34,14 @@ class App extends Component {
           <main>
             <Switch>
               <Route exact path="/users" component={ AllUsers }/>
+              <Route exact path="/units"
+              component={ AllUnits}/>
               <Route path="/users/:user_id" component={User}/>
-              // <Route path="/users/:user_id/edit" component={EditUser}/>
+              <Route path="/units/:unit_id"
+              component={Unit}/>
+              <Route path="/units/:unit_id/edit"
+              component={EditUnit}/>
+              <Route path="/users/:user_id/edit" component={EditUser}/>
               <Route path="/" component={Welcome}/>
             </Switch>
           </main>
