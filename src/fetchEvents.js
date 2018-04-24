@@ -1,74 +1,52 @@
 const [handleResponse, errorLog] = require('./response-handlers')
 
-class FetchEvent {
-  constructor() {
-    this.events = [],
-    this.baseUrl = "https://rentmark2-backend.herokuapp.com/api/v1/events"
-    this.event = {}
-  }
+export const baseUrl = "https://rentmark2-backend.herokuapp.com/api/v1/events"
 
-  getEvents = () => {
-    fetch(`${this.baseUrl}`)
+export const  getEvents = () => {
+    return fetch(`${this.baseUrl}`)
       .then(handleResponse)
-      .then((events) => this.storeEvents(events))
+      .then((events) => {
+        return events.map(function(e, idx){
+        e.key = idx
+        return e
+      })})
       .catch(errorLog)
   }
 
-  storeEvents = (events) => {
-    events.forEach(function(event) {
-      this.events.push(event)
-    })
-  }
 
-  getEvent = (id) => {
-    fetch(`${this.baseUrl}/${id}`)
-      .then(handleResponse)
-      .then((event) => this.storeEvent(event))
-  }
-
-  storeEvent = (event) => {
-    this.event.users = []
-    if (this.event.users === undefined) {
-      this.event.id = event.id,
-      this.event.name = event.name,
-      this.event.details = event.details,
-      this.event.date = event.date
-    } else {
-      this.event.id = event.id,
-      this.event.name = event.name,
-      this.event.details = event.details,
-      this.event.date = event.date,
-      event.users.forEach(function(user){
-        this.event.users.push(user)
-      })
-    }
-  }
-
-  patchEvent = (eventInfo, id) => {
-    fetch(`${this.baseUrl}/${id}` , this.patchConfig(eventInfo))
+export const  getEvent = (id) => {
+    return fetch(`${this.baseUrl}/${id}`)
       .then(handleResponse)
       .catch(errorLog)
   }
-  patchConfig = (userInfo) =>  {
+
+
+
+export const  patchEvent = (eventInfo, id) => {
+  return  fetch(`${this.baseUrl}/${id}` , this.patchConfig(eventInfo))
+      .then(handleResponse)
+      .catch(errorLog)
+  }
+export const  patchConfig = (userInfo) =>  {
     return {
       method: "PATCH",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(userInfo)
     }
   }
-  postEvent = (eventInfo) => {
-    fetch(`${this.baseUrl}`, this.postConfig(eventInfo))
+export const  postEvent = (eventInfo) => {
+  return  fetch(`${this.baseUrl}`, this.postConfig(eventInfo))
       .then(handleResponse)
       .catch(errorLog)
   }
 
-  postEventUser = (event_id, user_id, user_info) => {
-    fetch(`${this.baseUrl}/${event_id}/users/${user_id}`)
+export const  postEventUser = (event_id, user_id, user_info) => {
+return    fetch(`${this.baseUrl}/${event_id}/users/${user_id}`)
       .then(handleResponse)
       .catch(errorLog)
   }
 
-  postConfig(eventInfo) {
+export const  postConfig = (eventInfo) => {
     return {
       method: 'POST',
       headers: {'Content-Type': "application/json"},
@@ -76,15 +54,14 @@ class FetchEvent {
     }
   }
 
-  deleteEvent = (event_id) => {
+export const  deleteEvent = (event_id) => {
     fetch(`${this.baseUrl}/${event_id}`, {method: "DELETE"})
       .then(handleResponse)
       .catch(errorLog)
   }
 
-  deleteEventUser = (event_id, user_id) => {
+export const  deleteEventUser = (event_id, user_id) => {
     fetch(`${this.baseUrl}/${event_id}/users/${user_id}`, {method: "DELETE"})
       .then(handleResponse)
       .catch(errorLog)
   }
-}

@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import React, { Component } from 'react';
-import {getUsers} from './fetchUsers.js'
+import {getUsers, destroyUser} from './fetchUsers.js'
 const [handleResponse, errorLog] = require('./response-handlers')
 
 
@@ -29,6 +29,7 @@ class AllUsers extends Component {
                 <th> {user.user_last_name} </th>
                 <th> {user.user_email} </th>
                 <th> <Link to={`/users/${user.user_id}`} >Access Details</Link></th>
+                <th><Link to={destroyUser(`${user.user_id}`)}> Delete User</Link></th>
             </tr>
     })
   }
@@ -50,6 +51,7 @@ class AllUsers extends Component {
             <th>Last Name </th>
             <th>Email </th>
             <th>User Details </th>
+            <th>Delete User</th>
           </tr>
         </tbody>
           <tbody>

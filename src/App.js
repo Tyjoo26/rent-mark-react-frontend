@@ -7,6 +7,15 @@ import AllUsers from './allUsers.js'
 import AllEvents from './allEvents.js'
 import AllUnits from './allUnits.js'
 import User from './user.js'
+import EditUser from './edit-user.js'
+
+
+
+
+
+
+
+
 
 class App extends Component {
   constructor(){
@@ -25,6 +34,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/users" component={ AllUsers }/>
               <Route path="/users/:user_id" component={User}/>
+              // <Route path="/users/:user_id/edit" component={EditUser}/>
               <Route path="/" component={Welcome}/>
             </Switch>
           </main>

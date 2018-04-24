@@ -50,8 +50,8 @@ export const postConfig = (userInfo) => {
     }
   }
 
-export const  destroyUser = (e) => {
-    fetch(`${baseUrl}/${e.id}`, {method: "DELETE"})
+export const  destroyUser = (id) => {
+    return fetch(`${baseUrl}/${id}`, {method: "DELETE"})
       .then(handleResponse)
       .catch(errorLog)
   }
