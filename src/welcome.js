@@ -6,11 +6,15 @@ import {FormControl, FormGroup, ControlLabel, Form, Col, Button} from 'react-boo
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import tenantDashboard from './tenantDashboard.js'
 
-const logIn = (e) => {
-  console.log(e.target.parentNode)
-}
 
 class Welcome extends Component {
+
+
+  logIn = (e) => {
+    console.log(e.target.parentNode)
+  }
+
+
   render() {
     return (
       <div>
@@ -31,7 +35,7 @@ class Welcome extends Component {
           {`Access your account!`}
         </div>
         <div className="welcome-content">
-          <Form horizontal onSubmit={logIn}>
+          <Form horizontal onSubmit={this.logIn}>
             <FormGroup controlId="formHorizontalEmail">
               <Col componentClass={ControlLabel} sm={2}>
                 Email

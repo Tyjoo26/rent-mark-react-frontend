@@ -29,7 +29,11 @@ class AllUsers extends Component {
                 <th> {user.user_last_name} </th>
                 <th> {user.user_email} </th>
                 <th> <Link to={`/users/${user.user_id}`} >Access Details</Link></th>
-                <th><Link to={destroyUser(`${user.user_id}`)}> Delete User</Link></th>
+                <th>
+                  <button>
+                    Delete User
+                  </button>
+                </th>
             </tr>
     })
   }
@@ -51,7 +55,7 @@ class AllUsers extends Component {
             <th>Last Name </th>
             <th>Email </th>
             <th>User Details </th>
-            <th>Delete User</th>
+            <th></th>
           </tr>
         </tbody>
           <tbody>

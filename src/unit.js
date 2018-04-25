@@ -20,7 +20,6 @@ class Unit extends Component {
   }
 
   render() {
-    console.log(this.state)
     return(
       <Switch>
         <Route exact path={`/units/${this.props.match.params.unit_id}`}

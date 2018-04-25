@@ -29,7 +29,12 @@ class AllUnits extends Component {
         <th>{unit.unit_rent_due_date}</th>
         <th> <Link to={`/units/${unit.unit_id}`}> Access Details</Link> </th>
         <th> <Link to={`/units/${unit.unit_id}/edit`}> Edit Details</Link> </th>
-        <th><Link to={deleteUnit(`${unit.unit_id}`)}> Delete Unit</Link></th>
+        <th>
+        //whats going on here with delete unit and edit unit functionality?
+          <button onClick={() => deleteUnit(unit.unit_id)}>
+            Delete Unit
+          </button>
+        </th>
         </tr>
     })
   }
