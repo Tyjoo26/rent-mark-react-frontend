@@ -8,10 +8,10 @@ import AllEvents from './allEvents.js'
 import AllUnits from './allUnits.js'
 import User from './user.js'
 import Unit from './unit.js'
+import Event from './event.js'
 import EditUser from './edit-user.js'
 import EditUnit from './edit-unit.js'
-
-
+import EditEvent from './edit-event.js'
 
 
 
@@ -34,6 +34,7 @@ class App extends Component {
           <main>
             <Switch>
               <Route exact path="/users" component={ AllUsers }/>
+              <Route exact path="/events" component={ AllEvents }/>
               <Route exact path="/units"
               component={ AllUnits}/>
               <Route path="/users/:user_id" component={User}/>

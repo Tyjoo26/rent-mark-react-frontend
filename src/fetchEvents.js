@@ -3,7 +3,7 @@ const [handleResponse, errorLog] = require('./response-handlers')
 export const baseUrl = "https://rentmark2-backend.herokuapp.com/api/v1/events"
 
 export const  getEvents = () => {
-    return fetch(`${this.baseUrl}`)
+    return fetch(`${baseUrl}`)
       .then(handleResponse)
       .then((events) => {
         return events.map(function(e, idx){
@@ -15,7 +15,7 @@ export const  getEvents = () => {
 
 
 export const  getEvent = (id) => {
-    return fetch(`${this.baseUrl}/${id}`)
+    return fetch(`${baseUrl}/${id}`)
       .then(handleResponse)
       .catch(errorLog)
   }
@@ -23,7 +23,7 @@ export const  getEvent = (id) => {
 
 
 export const  patchEvent = (eventInfo, id) => {
-  return  fetch(`${this.baseUrl}/${id}` , this.patchConfig(eventInfo))
+  return fetch(`${baseUrl}/${id}` , patchConfig(eventInfo))
       .then(handleResponse)
       .catch(errorLog)
   }
@@ -35,13 +35,13 @@ export const  patchConfig = (userInfo) =>  {
     }
   }
 export const  postEvent = (eventInfo) => {
-  return  fetch(`${this.baseUrl}`, this.postConfig(eventInfo))
+  return fetch(`${baseUrl}`, postConfig(eventInfo))
       .then(handleResponse)
       .catch(errorLog)
   }
 
 export const  postEventUser = (event_id, user_id, user_info) => {
-return    fetch(`${this.baseUrl}/${event_id}/users/${user_id}`)
+return fetch(`${baseUrl}/${event_id}/users/${user_id}`)
       .then(handleResponse)
       .catch(errorLog)
   }
@@ -55,13 +55,13 @@ export const  postConfig = (eventInfo) => {
   }
 
 export const  deleteEvent = (event_id) => {
-    fetch(`${this.baseUrl}/${event_id}`, {method: "DELETE"})
+  return fetch(`${baseUrl}/${event_id}`, {method: "DELETE"})
       .then(handleResponse)
       .catch(errorLog)
   }
 
 export const  deleteEventUser = (event_id, user_id) => {
-    fetch(`${this.baseUrl}/${event_id}/users/${user_id}`, {method: "DELETE"})
+    return fetch(`${baseUrl}/${event_id}/users/${user_id}`, {method: "DELETE"})
       .then(handleResponse)
       .catch(errorLog)
   }
