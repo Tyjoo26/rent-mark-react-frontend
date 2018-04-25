@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {getUnits, deleteUnit} from './fetchUnits.js'
+import {getUnits} from './fetchUnits.js'
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 const [handleResponse, errorLog] = require('./response-handlers')
 
 
-class AllUnits extends Component {
+class Units extends Component {
   constructor() {
     super();
     this.state= {
@@ -27,13 +27,6 @@ class AllUnits extends Component {
         <th>{unit.unit_type}</th>
         <th>{unit.unit_rent}</th>
         <th>{unit.unit_rent_due_date}</th>
-        <th> <Link to={`/units/${unit.unit_id}`}> Access Details</Link> </th>
-        <th> <Link to={`/units/${unit.unit_id}/edit`}> Edit Details</Link> </th>
-        <th>
-          <button onClick={(e) => deleteUnit(unit.unit_id, e)}>
-            Delete Unit
-          </button>
-        </th>
         </tr>
     })
   }
@@ -51,9 +44,6 @@ class AllUnits extends Component {
             <th> Unit Type </th>
             <th> Unit Rent </th>
             <th> Unit Rent Due Date </th>
-            <th> Unit Details </th>
-            <th> Modify Details</th>
-            <th> </th>
             </tr>
           </tbody>
             <tbody>
@@ -64,4 +54,4 @@ class AllUnits extends Component {
     )
   }
 }
- export default AllUnits
+ export default Units

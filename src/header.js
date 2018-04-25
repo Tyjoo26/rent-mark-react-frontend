@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './rent_mark.png';
 import './App.css';
-import renderIf from './renderIf.js';
 
 class Header extends Component {
   constructor() {

@@ -3,9 +3,10 @@ import {patchUnit} from './fetchUnits.js'
 import {FormControl, FormGroup, ControlLabel, Form, Col, Button} from 'react-bootstrap';
 
 class EditUnit extends Component {
-  constructor() {
+  constructor(props) {
     super();
-    this.state = this.props.unit
+    console.log("in edit", props)
+    this.state = this.props ? this.props.unit : {}
   }
 
   patch = (e) => {
@@ -14,6 +15,7 @@ class EditUnit extends Component {
   }
 
   render() {
+    console.log("state in edit unit", this.state)
     return(
       <div>
         <h1>
@@ -23,7 +25,7 @@ class EditUnit extends Component {
           <Form horizontal onSubmit={this.patch}>
             <FormGroup controlId="formHorizontalUnitNumber">
               <Col componentClass={ControlLabel} sm={2}>
-                First Name
+                Unit Number
               </Col>
               <Col sm={8}>
                 <FormControl type="text" placeholder={`${this.state.unit_number}`} />
@@ -32,7 +34,7 @@ class EditUnit extends Component {
 
             <FormGroup controlId="formHorizontalUnitType">
               <Col componentClass={ControlLabel} sm={2}>
-                Last Name
+                Unit Type
               </Col>
               <Col sm={8}>
                 <FormControl type="text" placeholder={`${this.state.unit_type}`} />
@@ -41,7 +43,7 @@ class EditUnit extends Component {
 
             <FormGroup controlId="formHorizontalRentBalance">
               <Col componentClass={ControlLabel} sm={2}>
-                Email
+                Rent Balance
               </Col>
               <Col sm={8}>
                 <FormControl type="text" placeholder={`${this.state.unit_rent_due}`} />
@@ -50,7 +52,7 @@ class EditUnit extends Component {
 
             <FormGroup controlId="formHorizontalUnitRentDue">
               <Col componentClass={ControlLabel} sm={2}>
-                Password
+                Rent Due Date
               </Col>
               <Col sm={8}>
                 <FormControl type="text" placeholder={`${this.state.unit_rentunit_rent_due_date}`} />
@@ -59,7 +61,7 @@ class EditUnit extends Component {
 
             <FormGroup>
               <Col smOffset={2} sm={7}>
-                <Button type="submit">Sign in</Button>
+                <Button type="submit">Submit New Details</Button>
               </Col>
             </FormGroup>
           </Form>;

@@ -12,6 +12,7 @@ import Event from './event.js'
 import EditUser from './edit-user.js'
 import EditUnit from './edit-unit.js'
 import EditEvent from './edit-event.js'
+import Units from './units.js'
 
 
 
@@ -38,10 +39,8 @@ class App extends Component {
               <Route exact path="/units"
               component={ AllUnits}/>
               <Route path="/users/:user_id" component={User}/>
-              <Route path="/units/:unit_id"
-              component={Unit}/>
-              <Route path="/units/:unit_id/edit"
-              component={EditUnit}/>
+             <Route path='/units/:unit_id' component={Unit}/>
+             
               <Route path="/users/:user_id/edit" component={EditUser}/>
               <Route path="/" component={Welcome}/>
             </Switch>

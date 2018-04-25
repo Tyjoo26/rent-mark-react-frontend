@@ -12,10 +12,13 @@ class Unit extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     ShowUnit(this.props.match.params.unit_id)
       .then((unit) => unit[0])
-      .then((unit) => this.setState({ unit }))
+      .then((unit) => {
+        this.setState({ unit })
+          console.log('in Unit.js cWM', unit)
+        })
       .catch((error) => console.error( { error }))
   }
 
@@ -26,7 +29,7 @@ class Unit extends Component {
         render={(routeProps) => <UnitShow
         unit={this.state.unit}/>}/>
         <Route exact path={`/units/${this.props.match.params.unit_id}/edit`}
-        render={(routeProps) => <EditUnit
+        render={(_) => <EditUnit
         unit={this.state.unit}/>}/>
       </Switch>
     )
