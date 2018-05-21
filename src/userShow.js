@@ -1,6 +1,6 @@
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import {BrowserRouter as Link} from 'react-router-dom'
 import React, { Component } from 'react';
-import {showUser} from './fetchUsers.js'
+
 
 class UserShow extends Component {
   payRent = () => {

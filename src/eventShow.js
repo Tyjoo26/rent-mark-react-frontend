@@ -1,6 +1,6 @@
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+
 import React, { Component } from 'react';
-import {getEvent} from './fetchUnits.js'
+
 
 
 class EventShow extends Component {

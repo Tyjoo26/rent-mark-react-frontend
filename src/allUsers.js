@@ -1,7 +1,7 @@
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import {BrowserRouter as  Link} from 'react-router-dom'
 import React, { Component } from 'react';
 import {getUsers, destroyUser} from './fetchUsers.js'
-const [handleResponse, errorLog] = require('./response-handlers')
+
 
 
 class AllUsers extends Component {

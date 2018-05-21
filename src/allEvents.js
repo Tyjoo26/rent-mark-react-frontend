@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {getEvents } from './fetchEvents.js'
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
-const [handleResponse, errorLog] = require('./response-handlers')
+import {BrowserRouter as  Link} from 'react-router-dom'
+// const [handleResponse, errorLog] = require('./response-handlers')
 
 class AllEvents extends Component {
   constructor() {

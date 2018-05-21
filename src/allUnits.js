@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {getUnits, deleteUnit} from './fetchUnits.js'
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
-const [handleResponse, errorLog] = require('./response-handlers')
+import {BrowserRouter as Link} from 'react-router-dom'
+// const [handleResponse, errorLog] = require('./response-handlers')
 
 
 class AllUnits extends Component {

@@ -1,6 +1,6 @@
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+
 import React, { Component } from 'react';
-import {showUnit} from './fetchUnits.js'
+
 
 class UnitShow extends Component {
   dataRows = () => {

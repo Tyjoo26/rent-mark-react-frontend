@@ -1,4 +1,4 @@
-import { Route, Link, Switch} from 'react-router-dom'
+import { Route, Switch} from 'react-router-dom'
 import React, { Component } from 'react';
 import {showUser} from './fetchUsers.js'
 import UserShow from './userShow.js'

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {getUnits} from './fetchUnits.js'
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+
 const [handleResponse, errorLog] = require('./response-handlers')
 
 

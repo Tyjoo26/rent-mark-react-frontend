@@ -1,4 +1,4 @@
-import { Route, Link, Switch} from 'react-router-dom'
+import { Route, Switch} from 'react-router-dom'
 import React, { Component } from 'react';
 import {ShowUnit} from './fetchUnits.js'
 import UnitShow from './unitShow.js'
@@ -17,7 +17,6 @@ class Unit extends Component {
       .then((unit) => unit[0])
       .then((unit) => {
         this.setState({ unit })
-          console.log('in Unit.js cWM', unit)
         })
       .catch((error) => console.error( { error }))
   }
