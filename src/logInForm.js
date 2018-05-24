@@ -12,13 +12,14 @@ class LogInForm extends Component {
   }
 
   handleChange(e) {
-    const target = event.target;
-    
+    const target = e.target;
+    console.log(target)
+
   }
 
   render() {
-    return {
-      <div className="log-in">
+    return (
+      <div>
         <form onSubmit={this.handleSubmit}>
           <label>
             Email:
@@ -36,8 +37,9 @@ class LogInForm extends Component {
               value="Password"
               onChange={this.handleChange} />
           </label>
+          </form>
       </div>
-    }
+    )
   }
 }
 
