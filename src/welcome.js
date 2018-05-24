@@ -11,10 +11,6 @@ import './App.css';
 class Welcome extends Component {
 
 
-  logIn = (e) => {
-    e.preventDefault();
-    console.log(e.target)
-  }
 
 
   render() {
@@ -37,7 +33,7 @@ class Welcome extends Component {
           {`Access your account!`}
         </div>
         <div className="welcome-content">
-
+          <LogInForm/>
         </div>
       </section>
       </div>
