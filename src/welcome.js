@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import banner from './aussie.jpg'
+import LogInForm from './logInForm.js'
+
 import './App.css';
 // import Header from './header.js'
 // import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
