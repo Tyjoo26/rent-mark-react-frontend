@@ -80,6 +80,15 @@
 
 }
 
+.login{
+  text-align:center;
+}
+
+.log-in-form{
+  display:inline-block;
+  padding-bottom:5px;
+}
+
 .hero-text {
   text-align: center;
   position: absolute;

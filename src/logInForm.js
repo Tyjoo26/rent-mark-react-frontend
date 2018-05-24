@@ -19,22 +19,23 @@ class LogInForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className='login'>
         <form onSubmit={this.handleSubmit}>
-          <label>
+          <label className='log-in-form'>
             Email:
             <input
               name="Email"
               type='text'
-              value="Email"
+              value={this.state.email}
               onChange={this.handleChange} />
           </label>
-          <label>
+          <br />
+          <label className='log-in-form'>
             Password:
               <input
               name="Password"
               type='text'
-              value="Password"
+              value={this.state.password}
               onChange={this.handleChange} />
           </label>
           </form>
