@@ -80,13 +80,13 @@
 
 }
 
-.login{
-  text-align:center;
-}
+.login {
+    padding: 5  0px 0;
+  }
 
-.log-in-form{
-  display:inline-block;
-  padding-bottom:5px;
+.login form {
+  margin: 0 auto;
+  max-width: 320px;
 }
 
 .hero-text {
